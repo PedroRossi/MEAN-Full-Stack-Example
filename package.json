@@ -1,0 +1,19 @@
+{
+  "name": "contatooh",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node server"
+  },
+  "dependencies": {
+    "angular": "*",
+    "body-parser": "*",
+    "consign": "*",
+    "ejs": "*",
+    "express": "*",
+    "express-load": "^1.1.15",
+    "method-override": "*",
+    "mongoose": "*",
+    "passport": "*"
+  }
+}

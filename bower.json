@@ -1,0 +1,24 @@
+{
+  "name": "contatooh",
+  "description": "",
+  "main": "",
+  "authors": [
+    "PedroRossi <pgrr@cin.ufpe.br>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/PedroRossi/AHFE",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.7",
+    "angular-route": "^1.5.7",
+    "bootstrap": "^3.3.6",
+    "angular-resource": "^1.5.7"
+  }
+}

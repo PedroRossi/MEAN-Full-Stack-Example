@@ -1,0 +1,14 @@
+/**
+  * Defining the controller for the index pag
+  */
+module.exports = function() {
+  var controller = {};
+  controller.index = function(req, res) {
+    res.render('index', {name: 'Express'});
+  };
+  return controller;
+}
+
+// exports.index = function(req, res) {
+//   res.render('index', {name: 'Express'});
+// };
