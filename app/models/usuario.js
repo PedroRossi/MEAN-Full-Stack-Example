@@ -5,7 +5,7 @@ var mongoose = require('mongoose'),
 var usuarioSchema = new Schema({
   login: {
     type: String,
-    required: true
+    required: true,
     index: {
       unique: true
     }
