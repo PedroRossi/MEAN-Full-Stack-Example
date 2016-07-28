@@ -2,7 +2,7 @@
   * Server starter file
   */
 var http = require('http');
-var app = require('./config/express')();
+var app = require('./config/express')(3000);
 require('./config/passport')();
 require('./config/database.js')('mongodb://localhost/contatooh');
 

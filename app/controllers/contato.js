@@ -1,3 +1,7 @@
+var sanitize = require('mongo-sanitize');
+/**
+ * Controlador de contatos
+ */
 module.exports = function(app) {
 
   var Contato = app.models.contato;
@@ -16,18 +20,16 @@ module.exports = function(app) {
   controller.obtemContato = function(req, res) {
     var _id = req.params.id;
     Contato.findById(_id, function(error, contato) {
-      if(error) {
+      if(contato && !error) {
+        res.json(contato);
+      } else {
         console.log(error);
         res.status(404).json(error);
-      } else {
-        if(contato) {
-          res.json(contato);
-        }
       }
     });
   };
   controller.removeContato = function(req, res) {
-    var _id = req.params.id;
+    var _id = sanitize(req.params.id);
     Contato.remove({'_id':_id}, function(error, contato) {
       if(error) {
         console.error(error);
@@ -38,9 +40,13 @@ module.exports = function(app) {
   };
   controller.salvaContato = function(req, res) {
     var _id = req.body._id;
-
+    var dados = {
+      'nome': req.body.nome,
+      'email': req.body.email,
+      'emergencia': req.body.emergencia || null
+    };
     if(_id) {
-      Contato.update({'_id': _id},req.body,{upsert:true},function(error, contato) {
+      Contato.findByIdAndUpdate(id,dados,{},function(error, contato) {
         if(error) {
           // console.log(error);
           res.status(500).json(error);
@@ -48,7 +54,7 @@ module.exports = function(app) {
         res.status(201).json(contato);
       });
     } else {
-      Contato.create(req.body, function(error, contato) {
+      Contato.create(dados, function(error, contato) {
         if(error) {
           console.log(error);
           res.status(500).json(error);
