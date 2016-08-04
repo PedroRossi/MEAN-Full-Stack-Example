@@ -4,10 +4,12 @@
     <meta name="viewport" content="width=device-width">
     <meta charset="utf-8">
     <title>Contatooh</title>
+    <!-- build:css css/style.css -->
     <link rel="stylesheet"
-    href="vendor/bootstrap/dist/css/bootstrap.css"/>
+    href="../../public/vendor/bootstrap/dist/css/bootstrap.css"/>
     <link rel="stylesheet"
-    href="vendor/bootstrap/dist/css/bootstrap-theme.css"/>
+    href="../../public/vendor/bootstrap/dist/css/bootstrap-theme.css"/>
+    <!-- endbuild -->
   </head>
   <body class="container">
     <div class="text-right">
@@ -19,12 +21,14 @@
       </p>
     </div>
     <div ng-view></div>
-    <script src="vendor/angular/angular.js"></script>
-    <script src="vendor/angular-route/angular-route.js"></script>
-    <script src="vendor/angular-resource/angular-resource.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/services/ContatoService.js"></script>
-    <script src="js/controllers/ContatosController.js"></script>
-    <script src="js/controllers/ContatoController.js"></script>
+    <!-- build:js  js/all.js -->
+    <script src="../../public/vendor/angular/angular.js"></script>
+    <script src="../../public/vendor/angular-route/angular-route.js"></script>
+    <script src="../../public/vendor/angular-resource/angular-resource.js"></script>
+    <script src="../../public/js/main.js"></script>
+    <script src="../../public/js/services/ContatoService.js"></script>
+    <script src="../../public/js/controllers/ContatoController.js"></script>
+    <script src="../../public/js/controllers/ContatosController.js"></script>
+    <!-- endbuild -->
   </body>
 </html>
